@@ -1,0 +1,16 @@
+{
+  "name": "react-login-demo-service",
+  "version": "1.0.0",
+  "description": "react-login-demo-service",
+  "main": "index.js",
+  "author": "heyutang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.19",
+    "validator": "^13.1.1"
+  },
+  "scripts": {
+    "start": "nodemon ./index.js"
+  }
+}
