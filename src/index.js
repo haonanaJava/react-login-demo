@@ -17,7 +17,7 @@ import jwtDecode from 'jwt-decode'
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(logger, thunk))
+  composeWithDevTools(applyMiddleware(thunk, logger))
 )
 if (localStorage.getItem('jwtToken')) {
   setAuthorizationToken(localStorage.getItem('jwtToken'))

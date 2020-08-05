@@ -23,6 +23,9 @@ class NavigateBar extends Component {
             退出
           </Link>
         </li>
+        <li className='nav-item'>
+          <Link to='/shop'>Shop</Link>
+        </li>
       </ul>
     )
 

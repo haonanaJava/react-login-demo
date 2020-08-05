@@ -4,6 +4,7 @@ import ParticlesBg from 'particles-bg'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as loginActions from '../../actions/loginActions'
+import * as messageActions from '../../actions/messages.js'
 
 class LoginPage extends Component {
   constructor(props) {
@@ -20,6 +21,8 @@ class LoginPage extends Component {
             <LoginForm
               loginActions={this.props.loginActions}
               history={this.props.history}
+              messageActions={this.props.messageActions}
+              messages={this.props.messages}
             />
           </div>
           <div className='col-sm-3'></div>
@@ -32,7 +35,14 @@ class LoginPage extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     loginActions: bindActionCreators(loginActions, dispatch),
+    messageActions: bindActionCreators(messageActions, dispatch),
   }
 }
 
-export default connect(null, mapDispatchToProps)(LoginPage)
+const mapStateToProps = (state) => {
+  return {
+    messages: state.messages,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

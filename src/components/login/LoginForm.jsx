@@ -25,8 +25,13 @@ class LoginForm extends Component {
         .loginRequest({ username, password })
         .then((res) => {
           this.props.history.push('/')
+          //delete message in redux by message's id
+          for (const i of this.props.messages) {
+            this.props.messageActions.deleteMessage(i.id)
+          }
         })
         .catch((err) => {
+          console.log(err)
           this.setState({ errors: err.response.data.errors, isLoading: false })
         })
     }

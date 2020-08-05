@@ -25,9 +25,9 @@ export const setCurrentUser = (user) => {
 }
 
 export const logout = () => {
-  return (dispath) => {
+  return (dispatch) => {
     localStorage.removeItem('jwtToken')
     setAuthorizationToken(false)
-    dispath(setCurrentUser({}))
+    dispatch(setCurrentUser({}))
   }
 }
